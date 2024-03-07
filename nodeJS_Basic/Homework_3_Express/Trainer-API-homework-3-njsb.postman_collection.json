@@ -1,0 +1,303 @@
+{
+	"info": {
+		"_postman_id": "5c6bca01-37a8-44f5-a28c-e6b0b3345306",
+		"name": "Trainer API - homework 3 njsb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33338803"
+	},
+	"item": [
+		{
+			"name": "Get all trainers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/trainers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trainers"
+					],
+					"query": [
+						{
+							"key": "currentlyActive",
+							"value": "true",
+							"description": "Get only the active",
+							"disabled": true
+						},
+						{
+							"key": "currentlyActive",
+							"value": "false",
+							"description": "Get only the non-active",
+							"disabled": true
+						},
+						{
+							"key": "sortBy",
+							"value": "completedCoursesAsc",
+							"description": "Sort by completed courses- Ascending",
+							"disabled": true
+						},
+						{
+							"key": "sortBy",
+							"value": "completedCoursesDesc",
+							"description": "Sort by completed courses- Descending",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get one trainer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/trainers/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trainers",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Active Status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"4518c03f-46f8-4b19-94a6-627457478c95\",\r\n    \"firstName\": \"Ivan\",\r\n    \"lastName\": \"Apostolovski\",\r\n    \"email\": \"ivan.apostolovski@gmail.com\",\r\n    \"currentlyActive\": false,\r\n    \"timeEmployed\": \"5 months\",\r\n    \"coursesFinishedCount\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/trainers/:id/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trainers",
+						":id",
+						""
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "cee7fb6a-f854-410d-98ee-1d38bdc7d3a3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Time Employed",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"timeEmployed\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/trainers/:id/timeEmployed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trainers",
+						":id",
+						"timeEmployed"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1e645b0f-f7aa-4c0b-b3fc-853b2926f813"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Courses Finished",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"coursesFinishedCount\": \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/trainers/:id/coursesFinishedCount",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trainers",
+						":id",
+						"coursesFinishedCount"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "7ee6375f-7d52-447d-840e-410cf8d17d95"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new trainer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"firstName\": \"Aneta\",\r\n\"lastName\": \"Stankovska\",\r\n\"email\": \"anetastankovska@gmail.com\",\r\n\"currentlyActive\": false,\r\n\"timeEmployed\": \"2 years 5 months\",\r\n\"coursesFinishedCount\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/trainers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trainers"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete one trainer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/trainers/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trainers",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "f2e47df0-3da3-44db-92cb-f82d357c13cf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete all trainers",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/trainers\n"
+			},
+			"response": []
+		}
+	]
+}
