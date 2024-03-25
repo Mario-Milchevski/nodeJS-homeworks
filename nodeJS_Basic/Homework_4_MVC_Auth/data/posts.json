@@ -1,9 +1,18 @@
 [
   {
-    "id": "49196418-cc46-4dcc-9369-21637ead2ed6",
-    "userId": "8cd73702-dbe0-4ce1-9fd0-b2f750c4a9ee",
-    "title": "Exciting news",
-    "content": "This is my first post. Isn't that exciting ?",
-    "createdAt": "2024-03-22T14:47:24.275Z"
+    "title": "Like my post",
+    "content": "Test to gether likes",
+    "id": "a7db2667-97e3-454e-85b0-517df2dec3f0",
+    "userId": "0048bc83-da10-4660-991d-6247c401226d",
+    "createdAt": "2024-03-25T15:30:03.495Z",
+    "likes": []
+  },
+  {
+    "title": "second post",
+    "content": "another test",
+    "id": "95bd5ad0-2ac4-4401-8fe1-0a085df2d6d4",
+    "userId": "0048bc83-da10-4660-991d-6247c401226d",
+    "createdAt": "2024-03-25T15:30:52.249Z",
+    "likes": []
   }
 ]
