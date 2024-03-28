@@ -2,19 +2,19 @@
   {
     "id": "0048bc83-da10-4660-991d-6247c401226d",
     "username": "mario@email.com",
-    "password": "$2b$05$JrzyEZOE9UTC9DbGoU0NieI/UZnMPJCENzX5k7qXmeTJ66R7ONwFq",
-    "createdAt": "2024-03-25T15:27:14.600Z"
+    "password": "$2b$10$aTYmwQ/UlPfNibSvvuuhJ.Fs3cZXZqh7gwIK3lOs6/uDA7XWGju1a",
+    "updatedAt": "2024-03-28T11:27:41.497Z"
   },
   {
     "id": "c70121d7-513d-4418-b73b-de9f5bf16f76",
     "username": "stefan@email.com",
-    "password": "$2b$05$Sg5R9bwCzlAJur0EtHLR7OCIBUlzTfOGP2Qp6CyjvQNJK1aJpyP7u",
-    "createdAt": "2024-03-25T15:28:20.972Z"
+    "password": "$2b$10$p98yjg7XqyNKFG7ELBfTz.DNCjcSxafoD6MXLfmUNiJEFcPXKmgE2",
+    "updatedAt": "2024-03-28T11:31:00.495Z"
   },
   {
     "id": "9e4180dc-6dbc-4280-b5fb-3ad219e2ed34",
     "username": "nikola@email.com",
-    "password": "$2b$05$gl.KH08/CdGH2CyBBG/vZOrICUae0ZptRQ9UJMnlX9ncHvVHbDWVa",
-    "createdAt": "2024-03-25T15:28:32.179Z"
+    "password": "$2b$10$4jioxWz0JrdoDJ/rLztt5OALvwMf4QySwvUm8tY7b73HXJYVo5TRq",
+    "updatedAt": "2024-03-28T11:32:07.703Z"
   }
 ]

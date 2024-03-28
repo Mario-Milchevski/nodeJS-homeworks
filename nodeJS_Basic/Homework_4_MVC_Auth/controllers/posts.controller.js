@@ -39,6 +39,7 @@ export default class PostsController {
             if (e instanceof BadRequest) {
                 res.status(400).send({ message: e.message });
             } else {
+
                 res.status(403).send({ message: e.message })
             }
         }

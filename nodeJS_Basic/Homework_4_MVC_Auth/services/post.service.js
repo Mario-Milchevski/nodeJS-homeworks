@@ -4,7 +4,7 @@ import UserModel from "../models/user.model.js";
 import { NotFound, NotAllowed } from "../consts/errors.consts.js";
 
 export default class PostService {
-    static getPosts() {
+    static async getPosts() {
         return PostModel.getAll();
     }
     static getPost(id) {
@@ -23,7 +23,6 @@ export default class PostService {
         return createdPost;
     }
     static async updatePost(userId, id, body) {
-        const user = await UserModel.getById(userId);
         const existingPost = await this.getPost(id);
         if (!existingPost) {
             throw new NotFound('Post not found');
@@ -36,7 +35,7 @@ export default class PostService {
             id,
             userId,
             updatedAt: new Date().toISOString(),
-            likes,
+            likes: existingPost.likes,
         }
         const updatedPost = await PostModel.update(id, toBeUpdatedPost)
         return updatedPost;
@@ -56,7 +55,6 @@ export default class PostService {
         const user = await UserModel.getById(userId);
         const post = await this.getPost(id);
         const alreadyLikedIndex = post.likes.indexOf(user.username);
-        console.log(user);
         if (!post) {
             throw new NotFound('Post not found');
         }

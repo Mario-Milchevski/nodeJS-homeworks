@@ -23,7 +23,7 @@ export default class PostModel {
     }
 
     static async create(post) {
-        const posts = await DataService.readData(postsPath);
+        const posts = await this.getAll();
         posts.push(post);
         await DataService.writeData(postsPath, posts);
         return post;
@@ -37,7 +37,7 @@ export default class PostModel {
     }
     static async delete(id) {
         const posts = await this.getAll();
-        const filteredPosts = posts.filter(p=>p.id !== id);
+        const filteredPosts = posts.filter(p => p.id !== id);
         await DataService.writeData(postsPath, filteredPosts);
     }
 }

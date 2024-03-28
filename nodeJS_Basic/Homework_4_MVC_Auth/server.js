@@ -11,6 +11,7 @@ const HOSTNAME = 'localhost';
 app.use(express.json());
 app.use(cors());
 
+// A basic middleware that logs the request method, url and date in terminal
 app.use((req, res, next) => {
     console.log(`Made API Call to ${req.method}: ${req.url} on ${new Date().toISOString()}`);
     next();

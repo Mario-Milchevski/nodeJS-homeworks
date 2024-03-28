@@ -29,4 +29,17 @@ export default class UserModel {
         // Return the new user to the place where this create method will be called - in this case in class AuthService register ... auth.service.js 
         return user;
     }
+    static async update(userId, user) {
+        const users = await this.getAll();
+        const index = users.findIndex(u => u.id === userId)
+        users[index] = user;
+        await DataService.writeData(usersPath, users);
+        return users[index];
+
+    }
+    static async delete(id) {
+        const users = await this.getAll();
+        const filteredUsers = users.filter(u => u.id !== id);
+        await DataService.writeData(usersPath, filteredUsers);
+    }
 }

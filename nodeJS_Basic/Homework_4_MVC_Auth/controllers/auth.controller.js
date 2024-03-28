@@ -11,7 +11,7 @@ export default class AuthController {
         }
     }
     //      LOGIN
-    // In order to LogIn check if the user exists and if passwords match
+    // Тo LogIn check if the user exists and if passwords match
     static async login(req, res) {
         try {
             const user = await AuthService.login(req.body);
