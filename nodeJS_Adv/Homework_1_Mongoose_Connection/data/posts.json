@@ -1,0 +1,53 @@
+[
+  {
+    "title": "Mario first post",
+    "content": "First post",
+    "id": "a7db2667-97e3-454e-85b0-517df2dec3f0",
+    "userId": "0048bc83-da10-4660-991d-6247c401226d",
+    "updatedAt": "2024-03-26T09:28:46.794Z",
+    "likes": []
+  },
+  {
+    "title": "Stefan post",
+    "content": " test",
+    "id": "45085fac-c789-498b-87c5-396cbc8f5374",
+    "userId": "c70121d7-513d-4418-b73b-de9f5bf16f76",
+    "createdAt": "2024-03-26T09:14:25.114Z",
+    "likes": [
+      "mario@email.com",
+      "nikola@email.com"
+    ]
+  },
+  {
+    "title": "Stefan post 2",
+    "content": " Likes",
+    "id": "8b036d42-1ac2-4388-92e8-705fce78a279",
+    "userId": "c70121d7-513d-4418-b73b-de9f5bf16f76",
+    "createdAt": "2024-03-26T09:14:55.481Z",
+    "likes": [
+      "mario@email.com"
+    ]
+  },
+  {
+    "title": "Edited post NIkolas",
+    "content": "First",
+    "id": "6a0be463-40ce-45d5-a365-fdb7ba74dcb0",
+    "userId": "9e4180dc-6dbc-4280-b5fb-3ad219e2ed34",
+    "updatedAt": "2024-03-27T15:41:45.915Z",
+    "likes": [
+      "mario@email.com"
+    ]
+  },
+  {
+    "title": "Nikola post",
+    "content": "Second",
+    "id": "aa484c49-e30d-4006-9403-fdf9c66d6be1",
+    "userId": "9e4180dc-6dbc-4280-b5fb-3ad219e2ed34",
+    "createdAt": "2024-03-26T09:16:21.012Z",
+    "likes": [
+      "mario@email.com",
+      "stefan@email.com",
+      "zale@email.com"
+    ]
+  }
+]
