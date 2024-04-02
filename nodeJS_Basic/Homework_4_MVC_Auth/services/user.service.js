@@ -8,14 +8,6 @@ export default class UserService {
     static getUserById(id) {
         return UserModel.getById(id);
     }
-    static async getUserPosts(toFetchUserId, loggedInUserId) {
-        const posts = await PostModel.getAll();
-        const filteredPosts = posts.filter(post => post.userId === toFetchUserId);
-        if (!loggedInUserId) {
-            throw new NotAllowed('You are not authorized to do that');
-        }
-        return filteredPosts;
-    }
     static async updateUserPassword(loggedInUserId, userIdToUpdate, password) {
         const user = await this.getById(userIdToUpdate);
         if (loggedInUserId !== userIdToUpdate) {

@@ -9,6 +9,6 @@ router.post('', PostsController.createPost);
 router.put('/:id', PostsController.updatePost);
 router.delete('/:id', PostsController.deletePost);
 router.patch('/:id', PostsController.likePost);
-
+router.get('/user/:userId', PostsController.getPostsByUser);
 
 export default router;

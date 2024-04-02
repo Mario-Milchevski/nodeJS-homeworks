@@ -21,6 +21,11 @@ export default class PostModel {
         }
         return post;
     }
+    static async getByUserId(toFetchUserId) {
+        const posts = await this.getAll();
+        const filteredPosts = posts.filter(post => post.userId === toFetchUserId);
+        return filteredPosts;
+    }
 
     static async create(post) {
         const posts = await this.getAll();

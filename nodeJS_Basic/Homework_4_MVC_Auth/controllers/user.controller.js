@@ -10,18 +10,6 @@ export default class UserController {
             res.status(500).send({ message: e.message })
         }
     }
-    static async getUserPosts(req, res) {
-        try {
-            const posts = await UserService.getUserPosts(req.params.id, req.session.userId)
-            res.send(posts);
-        } catch (e) {
-            if (e instanceof NotAllowed) {
-                res.status(403).send({ message: e.message })
-            } else {
-                res.status(500).send({ message: e.message })
-            }
-        }
-    }
     static async updateUserPassword(req, res) {
         try {
             const user = await UserService.updateUserPassword(req.session.userId, req.params.id, req.body.password)

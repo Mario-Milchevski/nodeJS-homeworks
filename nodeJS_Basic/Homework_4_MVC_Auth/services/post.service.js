@@ -69,4 +69,9 @@ export default class PostService {
         const likedPost = await PostModel.update(id, post);
         return likedPost;
     }
+    static async getPostsByUser(toFetchUserId, loggedInUserId) {
+        const postsByUserId = await PostModel.getByUserId(toFetchUserId);
+        if (!loggedInUserId) throw new NotAllowed('You must login to do that');
+        return postsByUserId;
+    }
 }

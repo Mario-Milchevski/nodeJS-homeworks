@@ -75,4 +75,16 @@ export default class PostsController {
             }
         }
     }
+    static async getPostsByUser(req, res) {
+        try {
+            const posts = await PostService.getPostsByUser(req.params.userId, req.session.userId)
+            res.send(posts);
+        } catch (e) {
+            if (e instanceof NotAllowed) {
+                res.status(403).send({ message: e.message })
+            } else {
+                res.status(500).send({ message: e.message })
+            }
+        }
+    }
 }
