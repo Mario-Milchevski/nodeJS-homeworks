@@ -1,4 +1,5 @@
 import { Schema, model } from "mongoose";
+import bcrypt from 'bcrypt';
 
 const userSchema = new Schema(
     {
@@ -12,13 +13,15 @@ const userSchema = new Schema(
             type: String,
             required: true,
             minlength: 8,
-            maxlength: 30,
+            maxlength: 100,
+            set: (password) => bcrypt.hashSync(password, 10),
         },
         email: {
             type: String,
             required: true,
             minlength: 11,
             maxlength: 30,
+
         }
 
     },

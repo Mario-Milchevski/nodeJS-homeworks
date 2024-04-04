@@ -24,5 +24,5 @@ connect(MONGO_URI)
         });
     })
     .catch(e => {
-        console.log(`Issue while connecting to Mongo DB`, { error });
+        console.log(`Issue while connecting to Mongo DB`, { e });
     });

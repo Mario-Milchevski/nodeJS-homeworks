@@ -1,6 +1,6 @@
 import { NotFound } from "../consts/errors.consts.js";
 import { userSchema } from "../schemas/user.schema.js";
-import UserService from "../services/user.service.js"
+import UserService from "../services/user.service.js";
 
 export default class UserController {
     static async getUsers(req, res) {
