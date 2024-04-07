@@ -21,5 +21,5 @@ export default class AnimalsController {
             res.status(400).send({ message: e.message });
         }
     }
-
+    
 }

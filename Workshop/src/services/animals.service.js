@@ -31,6 +31,7 @@ export default class AnimalsService {
     static async updateAnimal(animalId, updateData) {
         return Animal.findByIdAndUpdate(animalId, updateData, { new: true });
     }
+
     static async deleteAnimal(animalId) {
         return Animal.findByIdAndDelete(animalId);
     }

@@ -18,7 +18,14 @@ const adoptionsSchema = new Schema(
         {
             type: Schema.Types.ObjectId,
             ref: 'animal',
+            required:[true, 'Animal ID required'],
+            unique: [true, 'Animal is already adopted'],
         },
+        adoptionDate: {
+            type: Date,
+            default: Date.now
+        }
+
     },
     {
         timestamps: true,
