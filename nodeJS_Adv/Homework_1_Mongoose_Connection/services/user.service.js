@@ -14,6 +14,9 @@ export default class UserService {
     static getUserById(userId) {
         return User.findById(userId);
     }
+    static getUserByUsername(username) {
+        return User.findOne({username: username});
+    }
     static async createUser(userData) {
         const user = new User(userData);
         return user.save();

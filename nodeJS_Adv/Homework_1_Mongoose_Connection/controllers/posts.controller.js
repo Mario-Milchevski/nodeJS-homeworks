@@ -1,4 +1,5 @@
-import { NotFound, BadRequest } from "../consts/errors.consts.js";
+import { ObjectId } from "mongodb";
+import { NotFound, BadRequest, NotAllowed } from "../consts/errors.consts.js";
 import { postSchema } from "../schemas/post.schema.js";
 import PostService from "../services/post.service.js";
 
@@ -29,8 +30,9 @@ export default class PostsController {
             await postSchema.validateAsync(req.body, {
                 abortEarly: false,
             });
-            const newPost = await PostService.createPost(req.body);
+            const newPost = await PostService.createPost(req.body, req.session.userId);
             res.status(201).json(newPost);
+
         } catch (e) {
             res.status(400).send({ message: e.message });
         }
@@ -59,6 +61,24 @@ export default class PostsController {
             if (e instanceof NotFound) {
                 res.status(404).send({ message: e.message });
             } else {
+                res.status(400).send({ message: e.message });
+            }
+        }
+    }
+    static async likePost(req, res) {
+        try {
+            const userId = req.session.userId;
+            const postId = req.params.id;
+            const post = await PostService.likePost(userId, postId);
+            res.send(post);
+        } catch (e) {
+            if (e instanceof NotAllowed) {
+                res.status(403).send({ message: e.message });
+            }
+            else if (e instanceof NotFound) {
+                res.status(404).send({ message: e.message });
+            }
+            else {
                 res.status(400).send({ message: e.message });
             }
         }

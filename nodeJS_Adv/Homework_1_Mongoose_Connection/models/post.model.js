@@ -4,16 +4,24 @@ const postSchema = new Schema(
     {
         title: {
             type: String,
-            required: [true, 'Title is required'],
+            required: true,
             minlength: 3,
             maxlength: 30,
         },
         content: {
             type: String,
-            required: [true, 'Content required'],
+            required: true,
             minlength: 3,
             maxlength: 30,
         },
+        userId: {
+            type: Schema.Types.ObjectId,
+            ref: 'user',
+            required: true
+        },
+        likes: {
+            type: [Schema.Types.ObjectId],
+        }
 
     },
     {
