@@ -37,10 +37,12 @@ export default class PostService {
         const user = await UserService.getUserById(userId);
         const post = await this.getPostById(postId);
         const alreadyLikedIndex = post.likes.indexOf(user._id);
+        console.log('POST',typeof post.userId);
+        console.log('USERid',typeof userId);
         if (!post) {
             throw new NotFound('Post not found');
         }
-        if (post.userId.toJSON() === userId) {
+        if (String(post.userId) === userId) {
             throw new NotAllowed("You can't like your own post");
         }
         if (alreadyLikedIndex > -1) {
