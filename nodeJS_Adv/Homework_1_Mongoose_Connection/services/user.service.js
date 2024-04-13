@@ -4,10 +4,10 @@ export default class UserService {
     static getUsers({ username, email }) {
         let searchQuery = {};
         if (username) {
-            searchQuery.username = String(username);
+            searchQuery.username = username;
         }
         if (email) {
-            searchQuery.email = String(email);
+            searchQuery.email = email;
         }
         return User.find(searchQuery);
     }

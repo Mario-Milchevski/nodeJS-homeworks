@@ -5,13 +5,13 @@ export default class PostService {
     static getPosts({ title, content, userId }) {
         let searchQuery = {};
         if (title) {
-            searchQuery.title = String(title);
+            searchQuery.title = title;
         }
         if (content) {
-            searchQuery.content = String(content);
+            searchQuery.content = content;
         }
         if (userId) {
-            searchQuery.userId = String(userId);
+            searchQuery.userId = userId;
         }
         return Post.find(searchQuery);
     }
@@ -36,15 +36,14 @@ export default class PostService {
     static async likePost(userId, postId) {
         const user = await UserService.getUserById(userId);
         const post = await this.getPostById(postId);
-        const alreadyLikedIndex = post.likes.indexOf(user._id);
-        console.log('POST',typeof post.userId);
-        console.log('USERid',typeof userId);
         if (!post) {
             throw new NotFound('Post not found');
         }
         if (String(post.userId) === userId) {
             throw new NotAllowed("You can't like your own post");
         }
+
+        const alreadyLikedIndex = post.likes.indexOf(user._id);
         if (alreadyLikedIndex > -1) {
             post.likes.splice(alreadyLikedIndex, 1)
         } else {
