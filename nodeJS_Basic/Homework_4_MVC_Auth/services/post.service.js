@@ -41,7 +41,6 @@ export default class PostService {
         return updatedPost;
     }
     static async deletePost(userId, id) {
-        const user = await UserModel.getById(userId);
         const post = await this.getPost(id);
         if (!post) {
             throw new NotFound('Post not found')
@@ -54,10 +53,15 @@ export default class PostService {
     static async likePost(userId, id) {
         const user = await UserModel.getById(userId);
         const post = await this.getPost(id);
-        const alreadyLikedIndex = post.likes.indexOf(user.username);
         if (!post) {
             throw new NotFound('Post not found');
         }
+        if (!user) {
+            throw new NotFound('User not found');
+        }
+        
+        const alreadyLikedIndex = post.likes.indexOf(user.username);
+
         if (post.userId === userId) {
             throw new NotAllowed("You can't like your own post");
         }
